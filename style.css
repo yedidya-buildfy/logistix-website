@@ -1,0 +1,699 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #141414;
+    --bg-tertiary: #1a1a1a;
+    --text-primary: #e5e5e5;
+    --text-secondary: #a3a3a3;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+    --border: #262626;
+    --success: #22c55e;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background:
+        linear-gradient(135deg, rgba(10, 10, 10, 0.85) 0%, rgba(20, 20, 20, 0.85) 100%),
+        url('hero-bg.png') center center / cover no-repeat;
+    border-bottom: 1px solid var(--border);
+    padding: 60px 0;
+    position: relative;
+}
+
+.logo {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tagline {
+    font-size: 1.625rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: white;
+    padding: 16px 48px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: all 0.2s ease;
+    border: 2px solid var(--accent);
+}
+
+.cta-button:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* Features Section */
+.features {
+    padding: 60px 0;
+    background:
+        linear-gradient(135deg, rgba(20, 20, 20, 0.85) 0%, rgba(20, 20, 20, 0.85) 100%),
+        url('bg-underhero.png') center center / cover no-repeat;
+    position: relative;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.feature-card {
+    background-color: var(--bg-tertiary);
+    padding: 28px 24px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card .icon {
+    width: 48px;
+    height: 48px;
+    color: var(--accent);
+    margin-bottom: 24px;
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Visual Workflow Section */
+.visual-workflow {
+    padding: 60px 0;
+    background:
+        linear-gradient(135deg, rgba(10, 10, 10, 0.85) 0%, rgba(10, 10, 10, 0.85) 100%),
+        url('workflow-bg.png') center center / cover no-repeat;
+    position: relative;
+}
+
+.visual-workflow h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.workflow-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-card {
+    width: 100%;
+    background-color: var(--bg-tertiary);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 100%;
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.workflow-step:nth-child(1) .step-card {
+    border-color: #8b5cf6;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.workflow-step:nth-child(2) .step-card {
+    border-color: #a855f7;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(168, 85, 247, 0.05) 100%);
+}
+
+.workflow-step:nth-child(3) .step-card {
+    border-color: #f59e0b;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(245, 158, 11, 0.05) 100%);
+}
+
+.workflow-step:nth-child(4) .step-card {
+    border-color: #06b6d4;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(6, 182, 212, 0.05) 100%);
+}
+
+.workflow-step:nth-child(5) .step-card {
+    border-color: #ec4899;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(236, 72, 153, 0.05) 100%);
+}
+
+.workflow-step:nth-child(6) .step-card {
+    border-color: var(--success);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(34, 197, 94, 0.05) 100%);
+}
+
+.step-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+    position: relative;
+}
+
+.step-1 { background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%); }
+.step-2 { background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%); }
+.step-3 { background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%); }
+.step-4 { background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 100%); }
+.step-5 { background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%); }
+.step-6 { background: linear-gradient(135deg, var(--success) 0%, #10b981 100%); }
+
+.step-icon {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+.step-card h3 {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.step-card p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.mini-preview {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+}
+
+.mini-preview.highlight {
+    background-color: rgba(245, 158, 11, 0.1);
+    border-color: #f59e0b;
+}
+
+.mini-preview.success {
+    background-color: rgba(34, 197, 94, 0.1);
+    border-color: var(--success);
+}
+
+.mini-item,
+.mini-connection,
+.mini-order,
+.mini-calc,
+.mini-deduct,
+.mini-sync {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.connector-arrow {
+    display: none;
+}
+
+.workflow-note {
+    max-width: 700px;
+    margin: 32px auto 0;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
+}
+
+.note-icon {
+    width: 32px;
+    height: 32px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.workflow-note p {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 60px 0;
+    background-color: var(--bg-secondary);
+}
+
+.how-it-works h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.step {
+    text-align: center;
+}
+
+.step-number {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin: 0 auto 24px;
+}
+
+.step h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.step p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Use Cases Section */
+.use-cases {
+    padding: 60px 0;
+    background-color: var(--bg-secondary);
+}
+
+.use-cases h2 {
+    text-align: center;
+    font-size: 2.25rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 32px;
+}
+
+.use-case {
+    background-color: var(--bg-tertiary);
+    padding: 40px 32px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.use-case:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.use-case .icon {
+    width: 56px;
+    height: 56px;
+    color: var(--accent);
+    margin: 0 auto 24px;
+}
+
+.use-case h4 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.use-case p {
+    color: var(--text-secondary);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.25rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.cta-section p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+/* Footer */
+footer {
+    padding: 48px 0;
+    background-color: var(--bg-primary);
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+footer p {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+footer .small {
+    font-size: 0.875rem;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin: 16px 0;
+}
+
+.footer-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--accent);
+}
+
+/* Privacy Policy Page */
+.privacy-header {
+    padding: 32px 0;
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-link .logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.privacy-content {
+    padding: 50px 0;
+    background-color: var(--bg-primary);
+}
+
+.privacy-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.last-updated {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-bottom: 32px;
+    font-style: italic;
+}
+
+.privacy-section {
+    margin-bottom: 32px;
+    max-width: 900px;
+}
+
+.privacy-section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.privacy-section h3 {
+    font-size: 1.375rem;
+    font-weight: 600;
+    margin: 24px 0 12px;
+    color: var(--text-primary);
+}
+
+.privacy-section p {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.privacy-section ul {
+    margin: 12px 0 16px 24px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.privacy-section li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.privacy-section strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.privacy-section a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.privacy-section a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+.contact-info {
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 16px;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .features h2,
+    .how-it-works h2,
+    .use-cases h2,
+    .cta-section h2,
+    .visual-workflow h2 {
+        font-size: 2rem;
+    }
+
+    .privacy-title {
+        font-size: 2rem;
+    }
+
+    .privacy-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .privacy-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .footer-nav {
+        gap: 24px;
+    }
+
+    .features-grid,
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile Workflow Layout */
+    .workflow-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .step-card {
+        padding: 20px;
+    }
+
+    .step-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .step-card p {
+        font-size: 0.9rem;
+    }
+
+    .workflow-note {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .workflow-note p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .feature-card,
+    .use-case {
+        padding: 32px 24px;
+    }
+
+    .cta-button {
+        padding: 14px 36px;
+        font-size: 1rem;
+    }
+
+    .step-card {
+        padding: 20px;
+    }
+
+    .step-icon-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .step-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .mini-preview {
+        font-size: 0.75rem;
+        padding: 12px;
+    }
+}
