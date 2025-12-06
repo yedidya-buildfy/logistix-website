@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: logistix-website
+    env: static
+    buildCommand: echo "No build required"
+    staticPublishPath: ./
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /*.css
+        name: Content-Type
+        value: text/css
+      - path: /*.png
+        name: Content-Type
+        value: image/png
